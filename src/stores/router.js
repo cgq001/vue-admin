@@ -5,10 +5,10 @@ const router = {
         mentList:[]
     },
     mutations :{
-       serRouterList(state,str){
+       serRouterList(state,str){   //配置权限
             state.routerList=str
        },
-       setMents(state,str){
+       setMents(state,str){    //设置导航栏
             state.mentList=str
        }
     },
