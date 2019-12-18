@@ -103,7 +103,7 @@ let routerLists=[
     id:20,
     path: '/admin',
     label: '管理员列表',
-    component: _import('admin/index'),
+    component: _import('Layout/Layout'),  //  Layout/Layout  如果包含子菜单 必须配置这个
     meta:{
         title: '管理员列表',
         table: true,
@@ -136,6 +136,19 @@ let routerLists=[
         }
       }
     ]
+  },
+  {
+    id: 4,
+    path: '/about',
+    name: 'about',
+    label: '关于',
+    component: _import('About/About'),
+    meta:{
+      title: '关于',
+      table: true,
+      display:true,
+      icon: 'el-icon-s-operation'
+    }
   }
 ]
 
@@ -157,7 +170,7 @@ let routerListString =JSON.stringify(routerLists)
  store.commit('serRouterList',src)
 
 
- let arr=[1,2,3,20,21,22]   //权限列表数组
+ let arr=[1,2,3,20,21,22,4]   //权限列表数组
 
  //根据权限配置表和路由信息对象 获取本用户的路由信息表，并添加到 home组件的二级路由里
 routerAlls[0].children = routerListFun(arr,routerLists)
@@ -180,6 +193,13 @@ let routers =new Router({
       meta:{
         title: '登陆',
         table: false
+      }
+    },
+    {
+      path: '*',  //当路由不存在是 指向
+      redirect: '/loading',
+      meta: {
+
       }
     }
   ]
