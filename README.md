@@ -1,5 +1,7 @@
 # suyuan-admin
 
+>这里版本是我写的,vue-admin-element版本 是从vue-admin-element 里复制出来的. 具体请查看分支
+
 ## 初始化
 ```
 yarn install
