@@ -49,7 +49,7 @@ export const asyncRoutes = [
 			{
 				path: '',
 				name: 'aboutindex',
-				component: () => import('@/views/about/Index.vue'),
+				component: () => import('@/views/abouts/Index.vue'),
 				meta:{
 					hidden: false,
 					title: '关于我们' ,
@@ -60,7 +60,7 @@ export const asyncRoutes = [
 			{
 				path: 'product',
 				name: 'aboutproduct',
-				component: () => import('@/views/about/Product.vue'),
+				component: () => import('@/views/abouts/Product.vue'),
 				meta:{
 					hidden: false,
 					title: '关于产品' ,
