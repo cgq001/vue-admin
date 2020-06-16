@@ -1,11 +1,3 @@
-<!--
- * @Author: your name
- * @Date: 2019-12-18 10:27:22
- * @LastEditTime: 2019-12-18 11:40:39
- * @LastEditors: your name
- * @Description: In User Settings Edit
- * @FilePath: \vue-admin\public\index.html
- -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,19 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>动态路由渲染</title>
+    <title><%= htmlWebpackPlugin.options.title %></title>
     <style>
-    html,body,#app{
-      padding: 0;
-      margin: 0;
-      width: 100%;
-      height: 100%;
-    }
+      /*
+ * CSS样式表重置初始化样式，PC端
+ */   html,body,#app{
+        width: 100%;
+        height: 100%;
+      }
+      body,p,div,ul,li,form,input,td,tr,th,div{
+        margin: 0;
+        padding: 0;
+      }
+      body{
+        position: relative;
+      }
+      ul,li{
+        list-style: none;
+      }
+      img{
+        border: none;
+        /* vertical-align: top; */
+        display: block;
+      }
+      a{
+        text-decoration: none;
+        color: #002be5;
+      }
+      a:hover{
+        text-decoration: none;
+      }
+      a img{
+        border: 0;
+      }
+      em{
+        color: #e50000;
+        font-style: normal;
+      }
+      button{
+        cursor: pointer; /*鼠标光标的类型*/
+      }
+      input,textarea{
+        outline: none;
+        appearance: none;
+      }
+      textarea{
+        resize: none;
+        overflow: auto;
+      }
+      table{
+        border-collapse: collapse;
+      }
+      em{
+        font-style: normal;
+      }
+
     </style>
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but suyuan-admin doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->

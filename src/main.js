@@ -1,21 +1,17 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from './router/index'
-import store from './stores/index'
-
-// 模拟数据
-require('./mock/load')
+import router from './router'
+import store from './store'
 
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
-import axios from './https/index'
-
-Vue.prototype.$https=axios
-
-Vue.use(ElementUI);
-
 Vue.config.productionTip = false
+
+Vue.use(ElementUI, { size: 'small', zIndex: 3000 });
+
+// 全局路由守卫
+import './router/auth'
 
 new Vue({
   router,
