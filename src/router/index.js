@@ -42,7 +42,7 @@ export const asyncRoutes = [
 		component: layout,
 		meta:{
 			hidden: false,
-			title: '关于' ,
+			title: '文件上传' ,
 			icon: 'el-icon-user-solid',	
 		},
 		children: [
@@ -52,7 +52,7 @@ export const asyncRoutes = [
 				component: () => import('@/views/abouts/Index.vue'),
 				meta:{
 					hidden: false,
-					title: '关于我们' ,
+					title: '常规上传' ,
 					icon: 'el-icon-user-solid',	
 					roles: ['admin','wechat']
 				},
@@ -63,7 +63,7 @@ export const asyncRoutes = [
 				component: () => import('@/views/abouts/Product.vue'),
 				meta:{
 					hidden: false,
-					title: '关于产品' ,
+					title: '断点续传' ,
 					icon: 'el-icon-user-solid',	
 					roles: ['admin','good']
 				},
@@ -93,6 +93,39 @@ export const asyncRoutes = [
 			{
 				path: 'sort',
 				name: 'goodsort',
+				component: () => import('@/views/good/Sort.vue'),
+				meta:{
+					hidden: false,
+					title: '分类列表' ,
+					icon: 'el-icon-user-solid',	
+					roles: ['admin','good']
+				},
+			}
+		]
+	},
+	{
+		path: '/echarts',
+		component: layout,
+		meta:{
+			hidden: false,
+			title: 'echarts' ,
+			icon: 'el-icon-user-solid',	
+		},
+		children: [
+			{
+				path: 'index',
+				name: 'echartsindex',
+				component: () => import('@/views/echarts/Index.vue'),
+				meta:{
+					hidden: false,
+					title: '常规图标' ,
+					icon: 'el-icon-user-solid',	
+					roles: ['admin','wechat','good']
+				},
+			},
+			{
+				path: 'sort',
+				name: 'echartssort',
 				component: () => import('@/views/good/Sort.vue'),
 				meta:{
 					hidden: false,
