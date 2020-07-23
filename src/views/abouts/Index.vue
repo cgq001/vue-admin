@@ -54,9 +54,8 @@ export default {
     methods:{
         // 当被拖动的对象在另一对象容器范围内拖动时触发此事件
         updataDragover(ev){
-            // console.log(ev)
+            // 注意  这里跟关键哈 
             ev.preventDefault()
-            //  return false;
         },
         // 被鼠标拖动的对象进入其容器范围内时触发此事件
         updataDragenter(){
@@ -76,14 +75,17 @@ export default {
             
             let oFile = ev.dataTransfer.files[0];
                 this.readerFile(oFile)
+
+                // 这里阻止默认事件 为阻止浏览器自动打开拖拽文件
             ev.preventDefault()
         },
         // 手动上传文件
         manualChange(ev){
             let oFile = ev.target.files[0]
+            
                 this.readerFile(oFile)
         },
-        // 读取文件
+        // 读取文件转 Base64
         readerFile(oFile){
             let This = this
             var reader = new FileReader();
@@ -151,6 +153,7 @@ export default {
                 This.scale = parseInt(scale*100)
                 console.log(This.scale)
             };
+            // 读取文件 转 base64
             reader.readAsDataURL(oFile); // ,'base64'
         },
         // Base64 转 图片
@@ -187,6 +190,16 @@ export default {
                 },
                 onDownloadProgress:function(progress){
                     // 为下载处理进度事件
+                }
+            })
+            .then(res => {
+
+                // 具体状态码 自行判断 这里用别人的 状态码是 201 哈哈 真实提交不成功哈  
+                if(res.status >= 200 && res.status <= 206){
+                   This.networkName = 'success'
+                }
+                if(res.status >= 400){
+                   This.networkName = 'exception'
                 }
             })
         }

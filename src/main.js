@@ -6,6 +6,11 @@ import store from './store'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
+
+import Loadings from './components/good/Loadings'
+
+Vue.prototype.$loadings = Loadings
+
 Vue.config.productionTip = false
 
 Vue.use(ElementUI, { size: 'small', zIndex: 3000 });

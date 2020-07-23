@@ -63,7 +63,18 @@ export const asyncRoutes = [
 				component: () => import('@/views/abouts/Product.vue'),
 				meta:{
 					hidden: false,
-					title: '断点续传' ,
+					title: '类型判断' ,
+					icon: 'el-icon-user-solid',	
+					roles: ['admin','good']
+				},
+			},
+			{
+				path: 'slice',
+				name: 'aboutslice',
+				component: () => import('@/views/abouts/Slice.vue'),
+				meta:{
+					hidden: false,
+					title: '切片上传' ,
 					icon: 'el-icon-user-solid',	
 					roles: ['admin','good']
 				},
@@ -71,21 +82,21 @@ export const asyncRoutes = [
 		]
 	},
 	{
-		path: '/good',
+		path: '/goos',
 		component: layout,
 		meta:{
 			hidden: false,
-			title: '产品' ,
+			title: '商品' ,
 			icon: 'el-icon-user-solid',	
 		},
 		children: [
 			{
-				path: 'index',
-				name: 'goodindex',
-				component: () => import('@/views/good/Index.vue'),
+				path: '',
+				name: 'gooddetail',
+				component: () => import('@/views/good/Detail.vue'),
 				meta:{
 					hidden: false,
-					title: '产品列表' ,
+					title: '商品SKU' ,
 					icon: 'el-icon-user-solid',	
 					roles: ['admin','wechat','good']
 				},
